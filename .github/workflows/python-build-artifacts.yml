@@ -37,7 +37,7 @@ jobs:
 
       - name: Create Python Version Text
         run: |
-          echo "package_version=$(cat ./src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> version.txt
+          echo "$(cat ./src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> version.txt
 
       - name: Upload Python Version Text
         uses: actions/upload-artifact@v2
