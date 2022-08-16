@@ -66,7 +66,7 @@ setup(
     tests_require=test_dependencies,
     entry_points={
         "console_scripts": [
-            f"{APP_NAME}=example.do_something:run",
+            f"{APP_NAME}=coffee.run_cli:run",
         ]
     },
     extras_require={
