@@ -1,6 +1,6 @@
 import logging
 from setuptools import find_packages, setup
-from src.example import __version__, APP_NAME
+from src.coffee import __version__, APP_NAME
 
 README_FILE_PATH: str = "../README.md"
 
