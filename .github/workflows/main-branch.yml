@@ -1,6 +1,9 @@
 # This workflow is only intended to run when a pull-request is merged into the main branch
 name: Main branch Workflow
 
+env:
+  PACKAGE_NAME: Coffee
+
 on:
   push:
     branches: [main]
@@ -14,3 +17,27 @@ jobs:
     name: Python Tests
     needs: build_python_artifacts
     uses: ./.github/workflows/python-tests.yml
+
+  create_draft_release:
+    name: Create Draft Github Release
+    runs-on: ubuntu-latest
+    needs: build_python_artifacts
+    steps:
+      - name: Download Python Wheel
+        uses: actions/download-artifact@v2
+        with:
+          name: wheel
+          path: python/dist/
+
+      - name: Set Version Value
+        run: echo "package_version=$(cat src/example/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> $GITHUB_ENV
+
+      - name: Create Github Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          draft: true
+          repo_token: "${{ secrets.DRAFT_RELEASE_TOKEN_MONNET }}"
+          automatic_release_tag: "v${{ env.package_version }}"
+          title: "${{PACKAGE_NAME}} v${{ env.package_version }}"
+          files: |
+            python/dist/*.whl
