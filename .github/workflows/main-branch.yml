@@ -29,11 +29,16 @@ jobs:
           name: wheel
           path: python/dist/
 
+      - name: Download Version File
+        uses: actions/download-artifact@v2
+        with:
+          name: version_file
+          path: ./
+
       - name: Set Version Value
         run: |
-          pwd
           ls
-          echo "package_version=$(cat ./src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> $GITHUB_ENV
+          echo "package_version=$(cat version.txt)" >> $GITHUB_ENV
 
       - name: Create Github Release
         uses: marvinpinto/action-automatic-releases@latest
