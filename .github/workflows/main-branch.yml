@@ -38,6 +38,6 @@ jobs:
           draft: true
           repo_token: "${{ secrets.DRAFT_RELEASE_TOKEN_MONNET }}"
           automatic_release_tag: "v${{ env.package_version }}"
-          title: "${{PACKAGE_NAME}} v${{ env.package_version }}"
+          title: "${{env.PACKAGE_NAME}} v${{ env.package_version }}"
           files: |
             python/dist/*.whl
