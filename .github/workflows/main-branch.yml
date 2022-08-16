@@ -31,7 +31,7 @@ jobs:
 
       - name: Set Version Value
         run: |
-          cwd
+          pwd
           ls
           echo "package_version=$(cat ./src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> $GITHUB_ENV
 
