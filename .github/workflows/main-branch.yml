@@ -30,7 +30,10 @@ jobs:
           path: python/dist/
 
       - name: Set Version Value
-        run: echo "package_version=$(cat src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> $GITHUB_ENV
+        run: |
+          cwd
+          ls
+          echo "package_version=$(cat ./src/coffee/__init__.py | grep __version__ | awk  -F'"' '{print $2}')" >> $GITHUB_ENV
 
       - name: Create Github Release
         uses: marvinpinto/action-automatic-releases@latest
