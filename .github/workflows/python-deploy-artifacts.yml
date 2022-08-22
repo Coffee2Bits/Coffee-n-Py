@@ -11,7 +11,7 @@ defaults:
 jobs:
   build_deployment_artifacts:
     name: Build Artifacts
-    uses: .github/workflows/python-build-artifacts.yml
+    uses: ./.github/workflows/python-build-artifacts.yml
 
   deploy_artifacts:
     name: Deploy Artifacts
