@@ -1,0 +1,34 @@
+name: Publish AaC Python Package to PyPI
+
+on:
+  release:
+    types: [published]
+
+defaults:
+  run:
+    working-directory: ./python
+
+jobs:
+  build_deployment_artifacts:
+    name: Build Artifacts
+    uses: .github/workflows/python-build-artifacts.yml
+
+  deploy_artifacts:
+    name: Deploy Artifacts
+    runs-on: ubuntu-latest
+    needs: build_deployment_artifacts
+    steps:
+      - name: Download API Documentation
+        uses: actions/download-artifact@v2
+        with:
+          name: api-documentation
+          path: python/docs/build/html/
+
+      - name: Download Python Wheel
+        uses: actions/download-artifact@v2
+        with:
+          name: aac_wheel
+          path: python/dist/
+
+      - name: Push to PyPI
+        run: echo "Push to PyPI - $(ls python/dist/*.whl)"
