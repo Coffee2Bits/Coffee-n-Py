@@ -1,7 +1,15 @@
-[![Generate Github Template Repository](https://img.shields.io/badge/Github-Generate--Repository--From--Code-brightgreen?logo=github)](https://github.com/Coffee2Bits/Python-Project-Template/generate)
-
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-# Python-Project-Template
+## Coffee
 
-A quick and easy starting point for new Python projects.
+Small python script for keeping computers awake for reasons...
+
+### Installation
+TBD
+
+### Usage
+
+Assuming that you have installed Coffee-n-Py, you can run it with the following command. The argument `interval` is an optional value that defaults to `300`, and represents the interval between actions in seconds.
+```bash
+coffee --interval 30
+```
