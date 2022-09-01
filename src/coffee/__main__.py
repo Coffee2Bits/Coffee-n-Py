@@ -9,6 +9,6 @@ if sys.argv[0].endswith("__main__.py"):
 
 
 if __name__ == "__main__":
-    from coffee.do_something import run
+    from coffee.cli import run
 
     run()
