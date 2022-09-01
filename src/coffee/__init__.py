@@ -1,4 +1,4 @@
-"""A Templated example Python tool."""
+"""A python utility for mimicing motion."""
 
 import logging
 import os
