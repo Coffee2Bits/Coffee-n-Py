@@ -2,7 +2,7 @@
 
 ## Coffee
 
-Small python script for keeping computers awake for reasons...
+Small python script for imitating user motions.
 
 ### Installation
 TBD
