@@ -2,7 +2,7 @@ import logging
 from setuptools import find_packages, setup
 from src.coffee import __version__, APP_NAME
 
-README_FILE_PATH: str = "../README.md"
+README_FILE_PATH: str = "./README.md"
 
 try:
     with open(README_FILE_PATH, "r") as file_handler:
