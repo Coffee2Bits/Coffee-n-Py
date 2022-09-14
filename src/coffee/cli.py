@@ -1,6 +1,6 @@
 """Main module for managing the CLI configuration and execution."""
 import argparse
-from coffee.coffee import keep_alive
+from coffee.manipulation import keep_alive
 
 
 def run():
