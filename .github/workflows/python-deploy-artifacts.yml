@@ -18,12 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_deployment_artifacts
     steps:
-      - name: Download API Documentation
-        uses: actions/download-artifact@v2
-        with:
-          name: api-documentation
-          path: python/docs/build/html/
-
       - name: Download Python Wheel
         uses: actions/download-artifact@v2
         with:
