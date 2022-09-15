@@ -10,7 +10,7 @@ def run():
     args_dict = vars(args)
 
     print(args_dict)
-    interval_time = args_dict.get("interval") or 300
+    interval_time = int(args_dict.get("interval", 300))
 
     keep_alive(interval_time)
 

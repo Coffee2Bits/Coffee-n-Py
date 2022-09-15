@@ -11,7 +11,9 @@ except Exception as exception:
     logging.error(f"Failed to open readme file {README_FILE_PATH} with error:\n {exception}")
     readme_description = ""
 
-runtime_dependencies: list[str] = []
+runtime_dependencies: list[str] = [
+    "PyAutoGUI >= 0.9"
+]
 
 development_dependencies: list[str] = [
     "wheel == 0.37.0",
@@ -78,7 +80,6 @@ setup(
         "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Topic :: Scientific/Engineering",
     ],
-    keywords=["MBSE"],
+    keywords=[""],
 )
