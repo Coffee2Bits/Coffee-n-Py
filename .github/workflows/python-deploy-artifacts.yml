@@ -21,7 +21,7 @@ jobs:
       - name: Download Python Wheel
         uses: actions/download-artifact@v2
         with:
-          name: aac_wheel
+          name: wheel
           path: python/dist/
 
       - name: Publish distribution to PyPI
