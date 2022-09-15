@@ -30,5 +30,8 @@ jobs:
           name: aac_wheel
           path: python/dist/
 
-      - name: Push to PyPI
-        run: echo "Push to PyPI - $(ls python/dist/*.whl)"
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_DEPLOY_TOKEN }}
+          packages_dir: python/dist/
