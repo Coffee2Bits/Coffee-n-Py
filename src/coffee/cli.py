@@ -17,5 +17,5 @@ def run():
 
 def _setup_argparser():
     parser = argparse.ArgumentParser(description="Make some motion periodically.")
-    parser.add_argument("--interval", type=int, default=max, help="Number of seconds between manipulation actions")
+    parser.add_argument("--interval", type=int, default=9999999999, help="Number of seconds between manipulation actions")
     return parser

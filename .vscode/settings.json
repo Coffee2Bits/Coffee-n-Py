@@ -22,10 +22,10 @@
     ],
     "launch": {
         "configurations": [{
-            "name": "Run Example",
+            "name": "Run Coffee-n-py in Debug",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/example/__main__.py",
+            "program": "${workspaceFolder}/src/coffee/__main__.py",
             "args": [],
             "console": "integratedTerminal",
             "justMyCode": false
